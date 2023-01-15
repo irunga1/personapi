@@ -25,7 +25,7 @@ router.post("/insert",(req,res)=>{
     var nombre = req.query.nombre;
     var id = req.query.id;
     console.log(req.query);
-    var query  = "INSERT INTO Persona (edad, profesion, nombre, id) VALUES("+edad+",'"+profesion+"','"+nombre+"',"+id+")";      
+    var query  = "INSERT INTO Persona (edad, profesion, nombre) VALUES("+edad+",'"+profesion+"','"+nombre+"')";      
     console.log("query: "+query);
     db.run(query);
     return res.json({"status":"succes"});
