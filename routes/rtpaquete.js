@@ -2,10 +2,8 @@ const router = require("express").Router();
 const sqlite3 = require("sqlite3");
 const bodyParser = require("body-parser");
 var db = new sqlite3.Database("person2.db");
-router.post("/insert", (req,res,next)=>{
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+router.post("/insert", (req,res)=>{
+
     var idMensajero  = req.query.idmensajero;
     var idPaquete  = req.query.idpaquete;
     var lat  = req.query.lat;
