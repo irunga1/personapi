@@ -46,12 +46,6 @@ router.put("/update", (req,res)=>{
         console.log("entro en catch");
         //return res.json({"status":"error", "message":error});
     }
-
-
-    
-    
-
-
 })
 
 
