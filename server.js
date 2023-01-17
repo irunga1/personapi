@@ -4,8 +4,24 @@ const phrases = require("./routes/phrases");
 const rtperson = require("./routes/rtperson");
 const rtpaquete = require("./routes/rtpaquete");
 
+const cors = require("cors");
+
 var whiteList = ["http://localhost"];
 app = new express();
+const corsOpts = {
+    origin: '*',
+  
+    methods: [
+      'GET',
+      'POST',
+    ],
+  
+    allowedHeaders: [
+      'Content-Type',
+    ],
+  };
+  
+  app.use(cors(corsOpts));
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
