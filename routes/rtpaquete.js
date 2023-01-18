@@ -13,13 +13,15 @@ router.get("/insert", (req,res)=>{
     var time1 = req.query.time;
     console.log(req.query);
     var query  = "INSERT INTO entrega (id_mensajero, id_paquete, lat,lon,date,time) VALUES("+idMensajero+",'"+idPaquete+"','"+lat+"','"+lon+"' ,'"+date1+"','"+time1+"')";      
+    console.log(query);
     console.log("query: "+query);
     db.run(query);
     return res.json({"status":"succes"});
 
 });
-router.get("/get/:id",(req,res)=>{
-    var query  = "select * from entrega where id_paquete = "+req.params.id;    
+router.get("/get/:id",(req,res)=>{//show ids
+    console.log("show by id");
+    var query  = "select * from entrega where id_paquete = "+req.params.id;
     console.log(query); 
     db.all(query, function(err, rows) {
         obj = rows
@@ -27,6 +29,7 @@ router.get("/get/:id",(req,res)=>{
     });    
 })
 router.get("/getall",(req,res)=>{
+    console.log("show all");
     var query  = "select * from entrega";
     console.log("query: "+query);
     db.all(query,(err,rows)=>{
