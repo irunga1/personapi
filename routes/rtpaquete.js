@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const sqlite3 = require("sqlite3");
-const bodyParser = require("body-parser");
 var db = new sqlite3.Database("person2.db");
 router.get("/insert", (req,res)=>{
     console.log("entro insert");
