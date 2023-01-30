@@ -4,6 +4,9 @@ const phrases = require("./routes/phrases");
 const rtperson = require("./routes/rtperson");
 const rtpaquete = require("./routes/rtpaquete");
 const rtcompany = require("./routes/rtcompany");
+const rtclient = require("./routes/rtclient");
+const rtdriver = require("./routes/rtdriver");
+const rtpackaget = require("./routes/rtpackagetype");
 const bodyParser = require("body-parser");
 // const cors = require("cors");
 
@@ -28,6 +31,10 @@ app.use((req, res, next) => {
 });
 
 app.use("/company",rtcompany);
+app.use("/client",rtclient);
+app.use("/driver",rtdriver);
+app.use("/driver",rtpackaget);
+
 
 
 app.use("/test",(req,res)=>{
